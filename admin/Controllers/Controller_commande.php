@@ -77,6 +77,25 @@ class Controller_commande extends Controller
             $this->render("all_cfournisseur", $data);
         }
     }
+    public function action_all_date()
+    {
+        $m = Model::get_model();
+        $data = ["date" => $m->get_all_date(), "position" => 1];
+        $this->render("all_date", $data);
+        /* var_dump($data); */
+
+    }
+
+    public function action_list_date()
+    {
+        $id = $_POST['date'];
+
+        if (isset($_POST['submit'])) {
+            $m = Model::get_model();
+            $data = ["list_date" => $m->get_list_date($id), "date" => $m->get_all_date(), "position" => 2];
+            $this->render("all_date", $data);
+        }
+    }
 
 }
 

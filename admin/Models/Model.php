@@ -334,5 +334,25 @@ class Model
 
         return $r->fetchAll(PDO::FETCH_OBJ);
     }
+    public function get_all_date()
+    {
+        /* $r = $this->bd->prepare("SELECT DISTINCT * FROM commande c INNER JOIN livres l ON c.Id_livre=l.Id INNER JOIN fournisseur f ON c.id_fournisseur=f.Id_fournisseur"); */
+        $r = $this->bd->prepare("SELECT DISTINCT date_achat FROM commande");
+
+        // Exécuter la requête
+        $r->execute();
+
+        return $r->fetchAll(PDO::FETCH_OBJ);
+    }
+
+    public function get_list_date($id)
+    {
+        $r = $this->bd->prepare("SELECT * FROM commande c INNER JOIN livres l ON c.Id_livre = l.Id INNER JOIN fournisseur f ON c.id_fournisseur = f.Id_fournisseur WHERE date_achat = '$id'");
+
+        // Exécuter la requête
+        $r->execute();
+
+        return $r->fetchAll(PDO::FETCH_OBJ);
+    }
 
 }

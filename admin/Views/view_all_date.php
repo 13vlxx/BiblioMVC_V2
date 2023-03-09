@@ -1,11 +1,11 @@
 <div class="main">
     <main>
-        <form action="?controller=commande&action=list_cfournisseur" method="post">
-            <select name="cfournisseur" id="select">
-                <option value="#" disabled selected>Saissisez le fournisseur</option>
+        <form action="?controller=commande&action=list_date" method="post">
+            <select name="date" id="select">
+                <option value="#" disabled selected>Saissisez la date</option>
 
-                <?php foreach ($nom_fournisseur as $s): ?>
-                    <option value="<?= $s->Id_fournisseur ?>"><?= $s->raison_sociale ?></option>
+                <?php foreach ($date as $s): ?>
+                    <option value="<?= $s->date_achat ?>"><?= $s->date_achat ?></option>
                 <?php endforeach ?>
             </select>
             <input type="submit" name="submit" id="envoyer">
@@ -33,7 +33,7 @@
             </tr>
         </thead>
         <tbody>
-            <?php foreach ($list_cfournisseur as $l): ?>
+            <?php foreach ($list_date as $l): ?>
                 <tr>
                     <td>
                         <?= $l->ISBN ?>
