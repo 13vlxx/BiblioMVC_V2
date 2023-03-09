@@ -58,6 +58,26 @@ class Controller_commande extends Controller
         }
     }
 
+    public function action_all_cfournisseur()
+    {
+        $m = Model::get_model();
+        $data = ["nom_fournisseur" => $m->get_all_cfournisseur(), "position" => 1];
+        $this->render("all_cfournisseur", $data);
+        /* var_dump($data); */
+
+    }
+
+    public function action_list_cfournisseur()
+    {
+        $id = $_POST['cfournisseur'];
+
+        if (isset($_POST['submit'])) {
+            $m = Model::get_model();
+            $data = ["list_cfournisseur" => $m->get_list_cfournisseur($id), "nom_fournisseur" => $m->get_all_cfournisseur(), "position" => 2];
+            $this->render("all_cfournisseur", $data);
+        }
+    }
+
 }
 
 ?>
