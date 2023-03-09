@@ -5,11 +5,13 @@ Résultat de votre recherche :
 <table class='table table-bordered table-responsive-md bg_table'>
 	<thead>
 		<tr>
-			<th>Id commande</th>
-			<th>Id livre</th>
-			<th>Id_fournisseur</th>
-			<th>date_achat</th>
-			<th>prix_achat</th>
+			<th>Numéro de commande</th>
+			<th>ISBN</th>
+			<th>Titre</th>
+			<th>Auteur</th>
+			<th>Raison sociale</th>
+			<th>Date d'achat</th>
+			<th>Prix d'achat</th>
 			<th>nbr_exemplaires</th>
 		</tr>
 	</thead>
@@ -20,10 +22,17 @@ Résultat de votre recherche :
 					<?= $c->Id_commande ?>
 				</td>
 				<td>
-					<?= $c->Id_livre ?>
+					<?= $c->ISBN ?>
 				</td>
 				<td>
-					<?= $c->id_fournisseur ?>
+					<?= $c->Titre ?>
+				</td>
+				<td>
+					<?= $c->Nom_auteur ?>
+					<?= $c->Prenom_auteur ?>
+				</td>
+				<td>
+					<?= $c->raison_sociale ?>
 				</td>
 				<td>
 					<?= $c->date_achat ?>

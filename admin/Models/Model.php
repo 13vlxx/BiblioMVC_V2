@@ -288,7 +288,7 @@ class Model
     public function get_all_commandes()
     {
 
-        $r = $this->bd->prepare("SELECT * FROM commande");
+        $r = $this->bd->prepare("SELECT * FROM commande c INNER JOIN livres l ON c.Id_livre=l.Id INNER JOIN fournisseur f ON c.id_fournisseur=f.Id_fournisseur");
         $r->execute();
 
         return $r->fetchAll(PDO::FETCH_OBJ);
