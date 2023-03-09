@@ -1,0 +1,94 @@
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  width: 100%;
+  background-color: #143a6e;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: absolute;
+  min-height: 100%;
+  margin: 0 0 px;
+  color: white;
+}
+
+header {
+  border-bottom: 1px solid white;
+  background-color: #001e3b;
+}
+
+footer {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 50px;
+  width: 100%;
+}
+
+p {
+  font-style: italic;
+}
+
+footer {
+  grid-row: 19;
+}
+
+.form {
+  display: flex;
+  height: 80vh;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: right;
+}
+
+#ajl {
+  font-weight: 100;
+  font-size: 2rem;
+}
+
+input[type="text"] {
+  width: 20rem;
+  margin-bottom: 0.4rem;
+}
+
+label {
+  margin-right: 100px;
+  text-align: left;
+}
+
+.submit {
+  text-align: center;
+}
+.bord {
+  color: white;
+  font-size: 125%;
+  font-style: italic;
+  text-decoration: underline;
+}
+
+#titre {
+  font-size: 250%;
+  font-weight: bold;
+}
+
+.bg_table {
+  background-color: #0000005f;
+  color: white;
+}
+
+.infos {
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+}
+
+h6 {
+  z-index: 100;
+  color: white;
+  margin-right: 2rem;
+}

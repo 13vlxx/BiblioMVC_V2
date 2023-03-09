@@ -1,0 +1,4 @@
+Erreur
+<p>
+    <?= $error ?>
+<p>
