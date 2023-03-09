@@ -92,3 +92,14 @@ h6 {
   color: white;
   margin-right: 2rem;
 }
+
+.nav {
+  display: flex;
+  align-items: center;
+}
+
+.logout button {
+  border: 1px solid black;
+  background-color: white;
+  border-radius: 10px;
+}
