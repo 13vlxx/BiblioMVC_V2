@@ -295,6 +295,27 @@ class Model
 
     }
 
+
+    public function get_all_ctitre()
+    {
+        $r = $this->bd->prepare("SELECT * FROM commande c INNER JOIN livres l ON c.Id_livre=l.Id INNER JOIN fournisseur f ON c.id_fournisseur=f.Id_fournisseur");
+
+        // Exécuter la requête
+        $r->execute();
+
+        return $r->fetchAll(PDO::FETCH_OBJ);
+    }
+
+    public function get_list_ctitre($id)
+    {
+        $r = $this->bd->prepare("SELECT * FROM commande c INNER JOIN livres l ON c.Id_livre=l.Id INNER JOIN fournisseur f ON c.id_fournisseur=f.Id_fournisseur WHERE c.Id_livre = $id ");
+
+        // Exécuter la requête
+        $r->execute();
+
+        return $r->fetchAll(PDO::FETCH_OBJ);
+    }
+
     public function get_all_nom_fournisseur()
     {
         $r = $this->bd->prepare("SELECT c.id_fournisseur,f.raison_sociale FROM commande c INNER JOIN fournisseur f ON  c.id_fournisseur=f.Id_fournisseur");
@@ -316,5 +337,4 @@ class Model
 
         return $r->fetchAll(PDO::FETCH_OBJ);
     }
-
 }

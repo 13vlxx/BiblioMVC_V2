@@ -19,7 +19,7 @@ class Controller_commande extends Controller
         $data = ["commandes" => $m->get_all_commandes()];
         $this->render("all_commandes", $data);
     }
-//* Renvoie vers le formulaire d'insertion des fournisseurs
+    //* Renvoie vers le formulaire d'insertion des fournisseurs
 /*     public function action_all_nom_fournisseur()
     {
         $m = Model::get_model();
@@ -37,6 +37,26 @@ class Controller_commande extends Controller
             $this->render("list_nom_fournisseur", $data);
         }
     } */
+
+    public function action_all_ctitre()
+    {
+        $m = Model::get_model();
+        $data = ["nom_titre" => $m->get_all_ctitre(), "position" => 1];
+        $this->render("all_ctitre", $data);
+        /* var_dump($data); */
+
+    }
+
+    public function action_list_ctitre()
+    {
+        $id = $_POST['ctitre'];
+
+        if (isset($_POST['submit'])) {
+            $m = Model::get_model();
+            $data = ["list_ctitre" => $m->get_list_ctitre($id), "nom_titre" => $m->get_all_ctitre(), "position" => 2];
+            $this->render("all_ctitre", $data);
+        }
+    }
 
 }
 
