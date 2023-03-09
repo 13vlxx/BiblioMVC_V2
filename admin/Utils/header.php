@@ -5,6 +5,7 @@
                 Consultation
             </div>
         </div>
+        <?php echo "Bonjour " . $_SESSION['nom'] . ' ' . $_SESSION['prenom']; ?>
         <ul class="nav justify-content-center nav-pills" id="menu">
             <li class="nav-item dropdown">
                 <a class="nav-link" href="?controller=home&action=home">Accueil</a>
