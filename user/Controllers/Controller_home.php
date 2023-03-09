@@ -9,6 +9,7 @@ class Controller_home extends Controller
 
     public function action_home()
     {
+        session_destroy();
         $this->render("home");
     }
 }
