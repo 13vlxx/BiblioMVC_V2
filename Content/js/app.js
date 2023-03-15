@@ -1,33 +1,27 @@
-// Récupération des éléments du formulaire
-const form = document.querySelector("form");
-error.style.color = "red";
+alert("hello");
 
-form.addEventListener("submit", (e) => {
+const form = document.querySelector("#form");
+
+form.addEventListener("submit", function (e) {
   const nom = document.getElementById("inom");
   const prenom = document.getElementById("iprenom");
   const email = document.getElementById("imail");
   const password = document.getElementById("ipassword");
-  const error = document.getElementById("error");
-  e.preventDefault;
 
-  if (!password.value) {
-    errorMessage = "Veuillez renseigner votre mot de passe";
+  if (nom.value.length < 2 || nom.value.length > 30) {
+    alert("Le nom doit contenir entre 2 et 30 caractères.");
+    e.preventDefault();
   }
-  if (!email.value) {
-    errorMessage = "Veuillez renseigner votre email";
+  if (prenom.value.length < 2 || prenom.value.length > 30) {
+    alert("Le prénom doit contenir entre 2 et 30 caractères.");
+    e.preventDefault();
   }
-  if (!prenom.value) {
-    errorMessage = "Veuillez renseigner votre prénom";
+  if (email.value.length < 8 || email.value.length > 30) {
+    alert("Le mail doit contenir entre 8 et 30 caractères.");
+    e.preventDefault();
   }
-  if (!nom.value) {
-    errorMessage = "Veuillez renseigner votre nom";
-  }
-
-  if (error) {
-    e.preventDefault;
-    error.innerHTML = errorMessage;
-    return false;
-  } else {
-    alert("Forumulaire envoyé");
+  if (password.value.length < 8 || password.value.length > 30) {
+    alert("Le mot de passe doit contenir entre 8 et 30 caractères.");
+    e.preventDefault();
   }
 });
