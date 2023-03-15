@@ -33,12 +33,8 @@ class Model
         return self::$instance;
     }
 
-    public function get_sign_up_user()
+    public function get_sign_up_user($nom, $prenom, $email, $password)
     {
-        $nom = $_POST['nom'];
-        $prenom = $_POST['prenom'];
-        $email = $_POST['email'];
-        $password = $_POST['password'];
         $r = $this->bd->prepare("INSERT INTO `users`(`nom`, `prenom`, `mail`, `password`) 
         VALUES (:nom,:prenom,:email,:pass)");
         $r->bindParam(':nom', $nom);
