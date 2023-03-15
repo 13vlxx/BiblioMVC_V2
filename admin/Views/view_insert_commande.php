@@ -2,14 +2,14 @@
     <h1>Page d'ajout d'une commande</h1>
     <h2 id="ajl">Ajouter une commande</h2>
     <form style="text-align: center;" action="?controller=commande&action=traitement_insert_commande" method="post">
-        <label for="livre">Id livre</label>
+        <label for="livre">Titre</label>
         <select id="livre" name="livre">
-            <option value="#" disabled selected>Saissisez le nom du livre</option>
+            <option value="#" disabled selected>Saissisez le Titre du livre</option>
             <?php foreach ($livre as $l): ?>
                 <option value="<?= $l->Id ?>"><?= $l->Titre ?></option>
             <?php endforeach ?>
         </select> <br />
-        <label for="fournisseur">Id fournisseur</label>
+        <label for="fournisseur">Fournisseur</label>
         <select id="fournisseur" name="fournisseur">
             <option value="#" disabled selected>Saissisez le nom du fournisseur</option>
             <?php foreach ($fournisseur as $f): ?>
