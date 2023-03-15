@@ -38,6 +38,19 @@ class Controller_commande extends Controller
         }
     } */
 
+    public function action_insert_commande()
+    {
+        $m = Model::get_model();
+        $data = ["livre" => $m->get_all_clivre(), "fournisseur" => $m->get_insert_cfournisseur()];
+        $this->render("insert_commande", $data);
+    }
+
+    //* Traitement insertion commande
+    public function traitement_insert_commande()
+    {
+
+    }
+
     public function action_all_ctitre()
     {
         $m = Model::get_model();

@@ -295,6 +295,22 @@ class Model
 
     }
 
+    public function get_all_clivre()
+    {
+        $r = $this->bd->prepare("SELECT Id, Titre FROM livres ORDER BY Titre");
+        $r->execute();
+
+        return $r->fetchAll(PDO::FETCH_OBJ);
+    }
+
+    public function get_insert_cfournisseur()
+    {
+        $r = $this->bd->prepare("SELECT Id_fournisseur, raison_sociale FROM fournisseur ORDER BY raison_sociale");
+        $r->execute();
+
+        return $r->fetchAll(PDO::FETCH_OBJ);
+    }
+
 
     public function get_all_ctitre()
     {

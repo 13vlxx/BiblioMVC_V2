@@ -22,6 +22,9 @@
 <body>
     <?php
     session_start();
+    /* if (!$_SESSION['nom']) {
+    header('Location: ../?controller=home&action=home');
+    } */
     if ($_SESSION['isAdmin']) {
         require_once 'Controllers/Controller.php';
         require_once 'Models/Model.php';

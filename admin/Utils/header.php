@@ -46,6 +46,7 @@
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                     <a class="dropdown-item" href="?controller=commande&action=all_commandes">Toutes les commandes</a>
+                    <a class="dropdown-item" href="?controller=commande&action=insert_commande">Ajouter une commande</a>
                     <a class="dropdown-item" href="?controller=commande&action=all_ctitre">Par titre</a>
                     <a class="dropdown-item" href="?controller=commande&action=all_cfournisseur">Par fournisseur</a>
                     <a class="dropdown-item" href="?controller=commande&action=all_date">Par date</a>
