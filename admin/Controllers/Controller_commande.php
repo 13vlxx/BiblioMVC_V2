@@ -46,9 +46,16 @@ class Controller_commande extends Controller
     }
 
     //* Traitement insertion commande
-    public function traitement_insert_commande()
+    public function action_traitement_insert_commande()
     {
-
+        if (isset($_POST['submit'])) {
+            $m = Model::get_model();
+            $m->get_traitement_insert_commande();
+            $data = ["commandes" => $m->get_all_commandes()];
+            $this->render("all_commandes", $data);
+        } else {
+            $this->render("insert_commande");
+        }
     }
 
     public function action_all_ctitre()

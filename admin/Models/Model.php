@@ -311,6 +311,24 @@ class Model
         return $r->fetchAll(PDO::FETCH_OBJ);
     }
 
+    public function get_traitement_insert_commande()
+    {
+        $livre = $_POST['livre'];
+        $fournisseur = $_POST['fournisseur'];
+        $date = $_POST['date'];
+        $prix = $_POST['prix'];
+        $nbr = $_POST['nbr'];
+        $r = $this->bd->prepare("INSERT INTO `commande`(`Id_livre`, `id_fournisseur`, `date_achat`, `prix_achat`, `nbr_exemplaires`) VALUES (:livre,:fournisseur,:date,:prix,:nbr)");
+        $r->bindParam(':livre', $livre);
+        $r->bindParam(':fournisseur', $fournisseur);
+        $r->bindParam(':date', $date);
+        $r->bindParam(':prix', $prix);
+        $r->bindParam(':nbr', $nbr);
+        $r->execute();
+
+        return $r->fetchAll(PDO::FETCH_OBJ);
+    }
+
 
     public function get_all_ctitre()
     {
