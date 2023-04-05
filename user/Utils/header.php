@@ -23,9 +23,9 @@
                 </div>
             </li>
             <li>
-                <div class="logout">
-                    <a href="../?controller=home&action=home"><button>Deconnexion</button></a>
-                </div>
+                <a href="../?controller=home&action=home"
+                    onclick="return confirm('Êtes-vous sûr de vouloir vous déconnecter ?');"><button>Deconnexion</button>
+                </a>
             </li>
         </ul>
     </div>

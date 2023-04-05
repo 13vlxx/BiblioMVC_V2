@@ -16,7 +16,7 @@
         crossorigin="anonymous"></script>
     <link rel="stylesheet" type="text/css" href="Content/css/main.css">
     <link rel="stylesheet" type="text/css" href="Content/css/style.css">
-    <script src="Content/js/app.js" defer></script>
+    <script src="./Content/js/app.js" defer></script>
     <title>Index</title>
 </head>
 

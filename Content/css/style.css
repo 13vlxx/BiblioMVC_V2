@@ -46,6 +46,33 @@ i {
   font-size: 2rem;
 }
 
+.password-container {
+  position: relative;
+  display: inline-block;
+}
+
+#toggle-password-visibility {
+  position: absolute;
+  top: 60%;
+  left: 90%;
+  transform: translate(-50%, -50%);
+  background: none;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+i.fa-eye,
+.fa-eye-slash {
+  color: black;
+  font-size: 20px;
+}
+
+span {
+  color: black;
+  font-size: 0.8rem;
+}
+
 a {
   color: rgb(48, 96, 255);
 }

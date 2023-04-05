@@ -34,23 +34,21 @@ class Controller_sign_up extends Controller
                 echo 'Format du nom ou du prénom incorrect';
                 exit;
             }
-            // Utilisation de FILTER_UNSAFE_RAW pour les champs de mot de passe
-            if (!filter_var($password, FILTER_UNSAFE_RAW)) {
-                echo 'Format du mot de passe incorrect';
-                exit;
-            }
+
+            // Hacher le mot de passe avec l'algorithme de hachage DEFAULT
+            $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
             $nom = trim(htmlspecialchars($nom));
             $prenom = trim(htmlspecialchars($prenom));
             $email = trim($email);
-            $password = trim(htmlspecialchars($password));
 
             $m = Model::get_model();
-            $m->get_sign_up_user($nom, $prenom, $email, $password);
+            $m->get_sign_up_user($nom, $prenom, $email, $hashed_password);
             $this->render("home");
         } else {
             $this->render("sign_up");
         }
     }
+
 }
 ?>

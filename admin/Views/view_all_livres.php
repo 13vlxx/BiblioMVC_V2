@@ -57,7 +57,7 @@ Résultat de votre recherche :
 					<?= "<a href='?controller=livre&action=edit_livre&id=" . $l->Id . "'>📝</a>" ?>
 				</td>
 				<td>
-					<?= "<a href='?controller=livre&action=delete_livre&id=" . $l->Id . "'>🗑️</a>" ?>
+					<?= "<a href='?controller=livre&action=delete_livre&id={$l->Id}' onclick=\"return confirm('Êtes-vous sûr de vouloir supprimer ce livre ?');\">🗑️</a>" ?>
 				</td>
 			</tr>
 		<?php endforeach; ?>

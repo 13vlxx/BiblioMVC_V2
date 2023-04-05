@@ -1,27 +1,23 @@
-alert("hello");
-
-const form = document.querySelector("#form");
+const form = document.querySelector("form");
+const errorSpan = document.querySelector("#error");
+errorSpan.style.color = "red";
 
 form.addEventListener("submit", function (e) {
-  const nom = document.getElementById("inom");
-  const prenom = document.getElementById("iprenom");
-  const email = document.getElementById("imail");
-  const password = document.getElementById("ipassword");
+  const fields = [
+    { input: document.getElementById("inom"), min: 2, max: 30 },
+    { input: document.getElementById("iprenom"), min: 2, max: 30 },
+    { input: document.getElementById("imail"), min: 8, max: 30 },
+    { input: document.getElementById("ipassword"), min: 8, max: 30 },
+  ];
 
-  if (nom.value.length < 2 || nom.value.length > 30) {
-    alert("Le nom doit contenir entre 2 et 30 caractères.");
-    e.preventDefault();
-  }
-  if (prenom.value.length < 2 || prenom.value.length > 30) {
-    alert("Le prénom doit contenir entre 2 et 30 caractères.");
-    e.preventDefault();
-  }
-  if (email.value.length < 8 || email.value.length > 30) {
-    alert("Le mail doit contenir entre 8 et 30 caractères.");
-    e.preventDefault();
-  }
-  if (password.value.length < 8 || password.value.length > 30) {
-    alert("Le mot de passe doit contenir entre 8 et 30 caractères.");
-    e.preventDefault();
+  for (const field of fields) {
+    if (field.input.value.length < field.min || field.input.value.length > field.max) {
+      errorSpan.innerHTML = "Un ou plusieurs champs sont mal remplis ou incorrects";
+      console.error(
+        "Soumission du formulaire annulée, tout les champs ne sont pas correctement remplis, veuillez réessayer"
+      );
+      e.preventDefault();
+      return;
+    }
   }
 });

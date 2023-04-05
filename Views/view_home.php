@@ -9,7 +9,12 @@
             </tr>
             <tr>
                 <td><label for="password">Mot de Passe : </label></td>
-                <td><input type="password" id="password" name="password" /></td>
+                <td>
+                    <div class="password-container">
+                        <input type="password" id="password" name="password" />
+                        <button id="toggle-password-visibility" type="button"><i class="fa fa-eye"></i></button>
+                    </div>
+                </td>
             </tr>
             <tr style="text-align: center">
                 <td><input type="submit" id="submit" name="login" value="Se connecter" /></td>
@@ -18,3 +23,19 @@
         </table>
     </form>
 </div>
+
+<script>
+    const togglePasswordVisibilityButton = document.querySelector("#toggle-password-visibility");
+    const passwordInput = document.querySelector("#password");
+
+    togglePasswordVisibilityButton.addEventListener("click", function () {
+        if (passwordInput.type === "password") {
+            passwordInput.type = "text";
+            togglePasswordVisibilityButton.innerHTML = '<i class="fa fa-eye-slash"></i>';
+        } else {
+            passwordInput.type = "password";
+            togglePasswordVisibilityButton.innerHTML = '<i class="fa fa-eye"></i>';
+        }
+    });
+
+</script>
