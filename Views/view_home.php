@@ -32,9 +32,11 @@
         if (passwordInput.type === "password") {
             passwordInput.type = "text";
             togglePasswordVisibilityButton.innerHTML = '<i class="fa fa-eye-slash"></i>';
+            console.log("Mot de passe visible");
         } else {
             passwordInput.type = "password";
             togglePasswordVisibilityButton.innerHTML = '<i class="fa fa-eye"></i>';
+            console.log("Mot de passe invisible");
         }
     });
 
