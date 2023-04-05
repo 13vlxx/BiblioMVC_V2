@@ -1,0 +1,15 @@
+# Dossiers
+node_modules/
+vendor/
+public/upload/
+
+# Fichiers
+.env
+.env.*
+.idea/
+.vscode/
+*.log
+*.cache
+*.swp
+.DS_Store
+Thumbs.db
