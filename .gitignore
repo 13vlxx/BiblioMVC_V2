@@ -5,7 +5,6 @@ public/upload/
 
 # Fichiers
 .env
-.env.*
 .idea/
 .vscode/
 *.log
