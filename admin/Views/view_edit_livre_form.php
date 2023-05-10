@@ -27,7 +27,8 @@
             <label for="langue">Langue</label>
             <input id="langue" type="text" name="langue" value="<?= $l->Langue ?>" /> <br />
             <div class="submit">
-                <input type="submit" name="submit" value="Ajouter" />
+                <input type="submit" name="submit" value="Ajouter"
+                    onclick="return confirm('Êtes-vous sûr de vouloir enregistrer les modifications efféctuées ?');" />
             </div>
         </form>
     <?php endforeach; ?>
