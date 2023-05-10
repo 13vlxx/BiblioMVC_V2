@@ -16,6 +16,9 @@
                     </div>
                 </td>
             </tr>
+            <tr>
+                <p id="error" style="color: red; font-size:0.8rem;"></p>
+            </tr>
             <tr style="text-align: center">
                 <td><input type="submit" id="submit" name="login" value="Se connecter" /></td>
                 <td><a id="sign_up" href="?controller=home&action=sign_up">Inscrivez-vous</a></td>
@@ -39,5 +42,17 @@
             console.log("Mot de passe invisible");
         }
     });
+
+    const loginForm = document.querySelector("form");
+    const emailInput = document.querySelector("#email");
+    const loginError = document.querySelector("#error");
+
+    loginForm.addEventListener("submit", function (event) {
+        if (!emailInput.value || !passwordInput.value) {
+            event.preventDefault();
+            loginError.textContent = "Veuillez remplir tous les champs.";
+        }
+    });
+
 
 </script>
