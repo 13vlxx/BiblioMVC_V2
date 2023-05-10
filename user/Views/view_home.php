@@ -10,9 +10,8 @@
         <h4>bienvenue sur le site de</h4>
         <h1>consultation de livre</h1>
         <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum ullam unde ipsam soluta
-            officia, voluptatibus rerum quo iusto eaque non, enim praesentium? Earum repudiandae ex
-            dolor odio! Dolorum, velit est.
+            Sur ce site nous allons afficher les differents livres que nous possédons, des mises a jours arriveront par
+            la suite.
         </p>
     </main>
 </div>
